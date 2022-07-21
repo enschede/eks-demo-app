@@ -1,0 +1,19 @@
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: eks-demo-app
+  name: eks-demo-app-service
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      name: http
+      nodePort: 30000
+  selector:
+    app: eks-demo-app
+  sessionAffinity: None
+  type: NodePort
