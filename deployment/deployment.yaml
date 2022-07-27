@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: kubernetes-eks-demo-app
-          image: enschede/eks-demo-app:1.0.0
+          image: enschede/eks-demo-app:sprint1
           imagePullPolicy: IfNotPresent
           resources:
             requests:
