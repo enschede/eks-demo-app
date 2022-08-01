@@ -12,8 +12,7 @@ spec:
       protocol: TCP
       targetPort: 8080
       name: http
-      nodePort: 30000
   selector:
     app: eks-demo-app
   sessionAffinity: None
-  type: NodePort
+  type: ClusterIP
