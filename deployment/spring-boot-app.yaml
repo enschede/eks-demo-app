@@ -99,6 +99,11 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: my-group
+    # SSL
+    external-dns.alpha.kubernetes.io/hostname: dev.liberaalgeluid.nl, acc.liberaalgeluid.nl, test.liberaalgeluid.nl
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}, {"HTTP": 8080}, {"HTTPS": 8443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:${AWS_ACCOUNT_ID}:certificate/e46ad310-db6b-4794-815a-d3112650d82f
     # Health Check Settings
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
@@ -111,6 +116,36 @@ metadata:
   namespace: eks-demo-app
 spec:
   rules:
+    - host: dev.liberaalgeluid.nl
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eks-demo-app-service
+                port:
+                  number: 8080
+    - host: acc.liberaalgeluid.nl
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eks-demo-app-service
+                port:
+                  number: 8080
+    - host: test.liberaalgeluid.nl
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eks-demo-app-service
+                port:
+                  number: 8080
     - http:
         paths:
           - path: /
