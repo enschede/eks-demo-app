@@ -4,5 +4,6 @@ metadata:
   name: sprint-boot-app-crossplance
   namespace: eks-demo-app
 resources:
+  - namespace.yaml
   - secret.yaml
   - db.yaml
