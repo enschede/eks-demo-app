@@ -2,7 +2,6 @@ apiVersion: rds.aws.crossplane.io/v1alpha1
 kind: DBInstance
 metadata:
   name: springbootflux-rds
-  namespace: eks-demo-app
 spec:
   providerConfigRef:
     name: default
@@ -22,5 +21,5 @@ spec:
   publishConnectionDetailsTo:
     name: dbinstance-conn
   writeConnectionSecretToRef:
-    namespace: springbootflux-dev
+    namespace: eks-demo-app
     name: aws-rdspostgresql-conn
