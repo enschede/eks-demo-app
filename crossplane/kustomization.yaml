@@ -1,35 +1,7 @@
-apiVersion: v1
-data:
-  # super-secret-password
-  password: c3VwZXItc2VjcmV0LXBhc3N3b3Jk
-kind: Secret
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 metadata:
-  name: postgres
-  namespace: springbootflux
-
----
-apiVersion: rds.aws.crossplane.io/v1alpha1
-kind: DBInstance
-metadata:
-  name: springbootflux-rds
-spec:
-  providerConfigRef:
-    name: default
-  forProvider:
-    region: us-west-2
-    dbInstanceClass: db.t2.small
-    masterUserPasswordSecretRef:
-      name: postgres-dev
-      key: password
-      namespace: springbootflux-dev
-    masterUsername: masteruser
-    allocatedStorage: 20
-    engine: postgres
-    engineVersion: "12.10"
-    skipFinalSnapshot: true
-    publiclyAccessible: false
-  publishConnectionDetailsTo:
-    name: dbinstance-conn
-  writeConnectionSecretToRef:
-    namespace: springbootflux-dev
-    name: aws-rdspostgresql-conn
+  name: sprint-boot-app-crossplance
+resources:
+  - secret.yaml
+  - db.yaml
