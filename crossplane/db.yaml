@@ -2,6 +2,7 @@ apiVersion: rds.aws.crossplane.io/v1alpha1
 kind: DBInstance
 metadata:
   name: springbootflux-rds
+  namespace: eks-demo-app
 spec:
   providerConfigRef:
     name: default
