@@ -10,7 +10,7 @@ spec:
     region: us-west-2
     dbInstanceClass: db.t2.small
     masterUserPasswordSecretRef:
-      name: postgres-dev
+      name: postgres
       key: password
       namespace: eks-demo-app
     masterUsername: masteruser
