@@ -1,7 +1,8 @@
 apiVersion: rds.aws.crossplane.io/v1alpha1
 kind: DBInstance
 metadata:
-  name: spring-boot-app-rds
+  name: eks-demo-app-rds
+  namespace: eks-demo-app
 spec:
   providerConfigRef:
     name: default
