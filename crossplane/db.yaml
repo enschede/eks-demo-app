@@ -1,3 +1,20 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eks-demo-app
+
+---
+apiVersion: v1
+metadata:
+  name: postgres
+  namespace: eks-demo-app
+kind: Secret
+data:
+  # super-secret-password
+  password: c3VwZXItc2VjcmV0LXBhc3N3b3Jk
+
+---
 apiVersion: rds.aws.crossplane.io/v1alpha1
 kind: DBInstance
 metadata:
