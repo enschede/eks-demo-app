@@ -1,50 +1,8 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: eks-demo-app
-
----
-apiVersion: v1
-metadata:
-  name: postgres
-  namespace: eks-demo-app
-kind: Secret
-data:
-  # super-secret-password
-  password: c3VwZXItc2VjcmV0LXBhc3N3b3Jk
-
----
-apiVersion: rds.aws.crossplane.io/v1alpha1
-kind: DBInstance
-metadata:
-  name: eks-demo-app-rds
-  namespace: eks-demo-app
-spec:
-  providerConfigRef:
-    name: default
-  forProvider:
-    region: us-west-2
-    dbInstanceClass: db.t2.small
-    masterUserPasswordSecretRef:
-      name: postgres
-      key: password
-      namespace: eks-demo-app
-    masterUsername: masteruser
-    allocatedStorage: 20
-    engine: postgres
-    engineVersion: "12.10"
-    skipFinalSnapshot: true
-    publiclyAccessible: false
-  publishConnectionDetailsTo:
-    name: dbinstance-conn
-  writeConnectionSecretToRef:
-    namespace: eks-demo-app
-    name: aws-rdspostgresql-conn
-
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
   name: sprint-boot-app-crossplance
   namespace: eks-demo-app
+resources:
+  - db.yaml

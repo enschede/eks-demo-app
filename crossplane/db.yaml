@@ -41,3 +41,4 @@ spec:
   writeConnectionSecretToRef:
     namespace: eks-demo-app
     name: aws-rdspostgresql-conn
+
