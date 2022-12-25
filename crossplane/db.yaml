@@ -27,6 +27,7 @@ spec:
   forProvider:
     region: us-west-2
     dbInstanceClass: db.t2.small
+    autoMinorVersionUpgrade: true
     masterUserPasswordSecretRef:
       name: postgres
       key: password
@@ -36,6 +37,7 @@ spec:
     engine: postgres
     engineVersion: "12.10"
     skipFinalSnapshot: true
+    applyImmediately: true
     publiclyAccessible: false
   publishConnectionDetailsTo:
     name: dbinstance-conn
