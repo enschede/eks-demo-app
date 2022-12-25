@@ -5,7 +5,7 @@ metadata:
   name: eks-demo-app-rds
   namespace: eks-demo-app
 spec:
-  deletionPolicy: Orphan
+  deletionPolicy: Delete
   providerConfigRef:
     name: default
   forProvider:
