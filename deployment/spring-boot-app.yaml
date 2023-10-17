@@ -103,7 +103,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: dev.liberaalgeluid.nl, acc.liberaalgeluid.nl, test.liberaalgeluid.nl
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}, {"HTTP": 8080}, {"HTTPS": 8443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:${AWS_ACCOUNT_ID}:certificate/e46ad310-db6b-4794-815a-d3112650d82f
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:${AWS_ACCOUNT_ID}:certificate/6776643f-a45b-47a9-97c7-f8999fb3ce61
     # Health Check Settings
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
