@@ -19,7 +19,7 @@ spec:
     masterUsername: masteruser
     allocatedStorage: 20
     engine: postgres
-    engineVersion: "12.10"
+    engineVersion: "15.3-R2"
     skipFinalSnapshot: true
     applyImmediately: true
     publiclyAccessible: false
