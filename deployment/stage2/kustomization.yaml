@@ -4,5 +4,5 @@ kind: Kustomization
 metadata:
   name: sprint-boot-app-db
   namespace: eks-demo-app
-resources:
-  - db.yaml
+#resources:
+#  - db.yaml
