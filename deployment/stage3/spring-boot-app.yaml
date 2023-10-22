@@ -15,6 +15,7 @@ metadata:
   name: eks-demo-app-deployment
   namespace: eks-demo-app
 spec:
+  replicas: 20
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 10
   selector:
