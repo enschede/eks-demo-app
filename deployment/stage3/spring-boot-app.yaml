@@ -148,6 +148,8 @@ spec:
                 port:
                   number: 8080
     # Deze catchall uitgeschakeld omdat ook prometheus.liberaalgeluid.nl bestaat
+    # Probleem is dat je niet kunt voorkomen dat deze als eerste geladen worden,
+    # Dan staat deze rule voor de prometheus en grafana rule
 #    - http:
 #        paths:
 #          - path: /
