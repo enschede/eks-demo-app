@@ -100,6 +100,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: eks-demo-group
+    alb.ingress.kubernetes.io/ip-address-type: dualstack
     # SSL
     external-dns.alpha.kubernetes.io/hostname: dev.liberaalgeluid.nl, acc.liberaalgeluid.nl, test.liberaalgeluid.nl
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}, {"HTTP": 8080}, {"HTTPS": 8443}]'
