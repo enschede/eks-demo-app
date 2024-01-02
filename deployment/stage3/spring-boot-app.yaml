@@ -102,7 +102,7 @@ metadata:
     alb.ingress.kubernetes.io/group.name: eks-demo-group
     # IPv6, zie notities in README in eks-demo-infra
     alb.ingress.kubernetes.io/ip-address-type: dualstack
-    alb.ingress.kubernetes.io/subnets: subnet-0fc025155115d3ca9, subnet-0f1f930cfb2b3909d, subnet-08991736d58ec2e49
+    alb.ingress.kubernetes.io/subnets: subnet-0fc025155115d3ca9, subnet-0f1f930cfb2b3909d  #, subnet-08991736d58ec2e49
     # SSL
     external-dns.alpha.kubernetes.io/hostname: dev.liberaalgeluid.nl, acc.liberaalgeluid.nl, test.liberaalgeluid.nl
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}, {"HTTP": 8080}, {"HTTPS": 8443}]'
