@@ -4,7 +4,7 @@ metadata:
   name: eks-demo-app-hpa
   namespace: eks-demo-app
 spec:
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 20
   scaleTargetRef:
     kind: Deployment
