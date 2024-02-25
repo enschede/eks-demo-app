@@ -2,6 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: eks-demo-app-hpa
+  namespace: eks-demo-app
 spec:
   minReplicas: 2
   maxReplicas: 20
